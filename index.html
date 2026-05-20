@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>J Balaji Group — Hero Section</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ivory:#faf7f2;
+  --crimson:#8b1a1a;
+  --crimson2:#a52424;
+  --gold:#b8912a;
+  --gold2:#d4a843;
+  --gold3:#f0c96a;
+  --dark:#0e0806;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --nav-h:78px;
+}
+html,body{overflow-x:hidden;font-family:'Outfit',sans-serif;background:#000}
+
+/* ─── NAV ─── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:9000;
+  opacity:0;transform:translateY(-20px);
+  animation:navIn .9s .1s var(--ease) forwards;
+}
+@keyframes navIn{to{opacity:1;transform:translateY(0)}}
+
+.nav-top-strip{
+  height:32px;background:rgba(14,8,6,0.96);
+  display:flex;align-items:center;
+  padding:0 48px;gap:24px;
+  border-bottom:1px solid rgba(184,146,42,0.15);
+}
+.nav-top-item{
+  display:flex;align-items:center;gap:6px;
+  font-size:10px;letter-spacing:.06em;color:rgba(255,255,255,0.55);font-weight:300;
+}
+.nav-top-item svg{width:11px;height:11px;color:var(--gold2)}
+.nav-top-item a{color:rgba(255,255,255,0.55);text-decoration:none;transition:color .2s}
+.nav-top-item a:hover{color:var(--gold3)}
+.nav-top-right{margin-left:auto;display:flex;align-items:center;gap:16px}
+
+.nav-main{
+  height:var(--nav-h);
+  background:rgba(250,247,242,0.96);
+  backdrop-filter:blur(24px);
+  border-bottom:2px solid rgba(184,146,42,0.22);
+  display:flex;align-items:center;
+  padding:0 48px;gap:0;
+  box-shadow:0 4px 32px rgba(14,8,6,0.12);
+}
+
+.nav-logo{display:flex;align-items:center;gap:13px;cursor:pointer;flex-shrink:0}
+.nav-logo-img{
+  width:54px;height:54px;border-radius:50%;
+  border:2px solid var(--gold2);
+  background:rgba(184,146,42,0.06);
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  transition:all .3s;
+}
+.nav-logo-img img{width:48px;height:48px;object-fit:contain;border-radius:50%}
+.nav-logo:hover .nav-logo-img{box-shadow:0 0 0 5px rgba(184,146,42,0.15)}
+.nav-logo-text .n1{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.2em;color:var(--crimson);font-weight:700;line-height:1}
+.nav-logo-text .n2{font-size:7.5px;letter-spacing:.16em;color:var(--gold);font-weight:300;margin-top:3px;text-transform:uppercase}
+
+.nav-sep{width:1px;height:28px;background:linear-gradient(to bottom,transparent,rgba(184,146,42,0.3),transparent);margin:0 22px;flex-shrink:0}
+
+.nav-links{display:flex;align-items:center;gap:4px;flex:1}
+.nav-link{
+  padding:8px 16px;
+  font-size:10px;letter-spacing:.14em;color:var(--crimson);
+  text-transform:uppercase;font-weight:400;
+  position:relative;cursor:pointer;text-decoration:none;
+  transition:color .2s;
+}
+.nav-link::after{
+  content:'';position:absolute;bottom:4px;left:16px;right:16px;
+  height:1.5px;background:var(--gold2);
+  transform:scaleX(0);transform-origin:center;
+  transition:transform .3s var(--ease);
+}
+.nav-link:hover::after{transform:scaleX(1)}
+
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:12px}
+.nav-wa{
+  width:38px;height:38px;border-radius:50%;
+  background:#25d366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 14px rgba(37,211,102,0.35);
+  transition:all .25s;
+  text-decoration:none;
+}
+.nav-wa:hover{transform:scale(1.1);box-shadow:0 6px 22px rgba(37,211,102,0.5)}
+.nav-wa svg{width:20px;height:20px;fill:#fff}
+.btn-nav-cta{
+  padding:10px 24px;
+  background:var(--crimson);color:#fff;
+  font-size:9px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+  border:none;cursor:pointer;
+  position:relative;overflow:hidden;transition:all .28s;
+  text-decoration:none;display:inline-flex;align-items:center;gap:7px;
+}
+.btn-nav-cta::before{content:'';position:absolute;inset:0;background:var(--crimson2);transform:translateY(101%);transition:transform .28s var(--ease)}
+.btn-nav-cta:hover::before{transform:translateY(0)}
+.btn-nav-cta:hover{box-shadow:0 8px 28px rgba(139,26,26,0.4)}
+.btn-nav-cta span{position:relative;z-index:1}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;width:100%;height:100vh;min-height:660px;
+  overflow:hidden;display:flex;flex-direction:column;
+  background:var(--dark);
+}
+
+/* SLIDESHOW */
+.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 2s ease}
+.hero-slide.active{opacity:1}
+.hero-slide img{
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  transform:scale(1.07);transition:transform 10s ease;
+  filter:brightness(0.6) saturate(0.9);
+}
+.hero-slide.active img{transform:scale(1)}
+
+/* OVERLAYS */
+.ov1{position:absolute;inset:0;background:linear-gradient(120deg,rgba(8,2,0,0.95) 0%,rgba(8,2,0,0.72) 42%,rgba(8,2,0,0.22) 100%);z-index:1}
+.ov2{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,2,0,0.98) 0%,rgba(8,2,0,0.55) 28%,transparent 55%);z-index:1}
+.ov3{position:absolute;inset:0;background:radial-gradient(ellipse 80% 120% at 5% 55%,rgba(100,12,12,0.55) 0%,transparent 65%);z-index:1}
+
+/* ANIMATED GRID LINES — TravelGuru-style */
+.hero-grid{
+  position:absolute;inset:0;z-index:2;
+  pointer-events:none;overflow:hidden;
+}
+.hero-grid-line{
+  position:absolute;background:rgba(184,146,42,0.06);
+}
+.hgl-v1{width:1px;height:100%;left:20%;animation:glowV 4s ease-in-out infinite alternate}
+.hgl-v2{width:1px;height:100%;left:40%;animation:glowV 4s 1s ease-in-out infinite alternate}
+.hgl-v3{width:1px;height:100%;left:60%;animation:glowV 4s 2s ease-in-out infinite alternate}
+.hgl-v4{width:1px;height:100%;left:80%;animation:glowV 4s 1.5s ease-in-out infinite alternate}
+.hgl-h1{height:1px;width:100%;top:33%;animation:glowH 5s ease-in-out infinite alternate}
+.hgl-h2{height:1px;width:100%;top:66%;animation:glowH 5s 2s ease-in-out infinite alternate}
+@keyframes glowV{0%{background:rgba(184,146,42,0.04)}100%{background:rgba(184,146,42,0.14)}}
+@keyframes glowH{0%{background:rgba(184,146,42,0.03)}100%{background:rgba(184,146,42,0.11)}}
+
+/* ANIMATED PARTICLES */
+.particles{position:absolute;inset:0;z-index:2;pointer-events:none}
+.particle{
+  position:absolute;width:3px;height:3px;border-radius:50%;
+  background:var(--gold2);opacity:0;
+  animation:floatP var(--dur,8s) var(--del,0s) ease-in-out infinite;
+}
+@keyframes floatP{
+  0%{transform:translateY(0) scale(0);opacity:0}
+  10%{opacity:.6}
+  90%{opacity:.3}
+  100%{transform:translateY(-80px) scale(0);opacity:0}
+}
+
+/* SLIDING SIDE TAG — TravelGuru style */
+.hero-side-tag{
+  position:absolute;right:0;top:50%;transform:translateY(-50%) rotate(90deg) translateX(50%);
+  transform-origin:right center;
+  z-index:8;
+  font-size:8px;letter-spacing:.5em;color:rgba(184,146,42,0.55);
+  text-transform:uppercase;font-weight:300;
+  white-space:nowrap;
+  display:flex;align-items:center;gap:10px;
+  opacity:0;animation:sideTagIn 1s 1.4s var(--ease) forwards;
+}
+@keyframes sideTagIn{to{opacity:1}}
+.hero-side-tag::before{content:'';width:24px;height:1px;background:rgba(184,146,42,0.4)}
+
+/* HERO CONTENT */
+.hero-content{
+  position:absolute;
+  top:calc(var(--nav-h) + 32px);
+  left:0;right:0;bottom:80px;
+  z-index:8;
+  display:flex;align-items:center;
+  padding:0 7vw;
+}
+.hero-inner{max-width:820px;width:100%}
+
+/* ANIMATED EYEBROW */
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(139,26,26,0.85);border:1px solid rgba(240,201,106,0.3);
+  padding:6px 16px 6px 12px;
+  margin-bottom:28px;
+  opacity:0;transform:translateX(-40px);
+  animation:slideRight .8s .5s var(--ease) forwards;
+}
+@keyframes slideRight{to{opacity:1;transform:translateX(0)}}
+.hero-badge-dot{width:6px;height:6px;background:var(--gold3);border-radius:50%;animation:pulseDot 2s ease-in-out infinite}
+@keyframes pulseDot{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.5);opacity:.6}}
+.hero-badge-text{font-size:9px;letter-spacing:.4em;color:var(--gold3);text-transform:uppercase;font-weight:300}
+
+/* HEADLINE — letter by letter reveal */
+.hero-h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(68px,9.5vw,148px);
+  font-weight:700;line-height:.82;
+  color:rgba(250,247,242,0.97);
+  letter-spacing:-.02em;
+  margin-bottom:4px;
+}
+.hero-h1 .word{display:inline-block;overflow:hidden;vertical-align:bottom}
+.hero-h1 .word span{
+  display:inline-block;
+  transform:translateY(110%);opacity:0;
+  animation:wordUp .9s var(--ease) forwards;
+}
+.hero-h1 .line1{display:block;font-size:.6em;color:rgba(250,247,242,.65);font-weight:500;letter-spacing:.08em;margin-bottom:8px}
+.hero-h1 .line1 .word span{animation-delay:.4s}
+.hero-h1 .accent{display:block;font-style:italic;color:var(--gold3);text-shadow:0 0 80px rgba(240,201,106,.4)}
+.hero-h1 .accent .word span{animation-delay:.6s}
+.hero-h1 .line3{
+  display:block;
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(8px,.75vw,12px);
+  letter-spacing:.5em;color:rgba(250,247,242,.25);
+  font-style:normal;font-weight:300;text-transform:uppercase;
+  margin-top:20px;
+}
+.hero-h1 .line3 .word span{animation-delay:.85s}
+@keyframes wordUp{to{transform:translateY(0);opacity:1}}
+
+/* DIVIDER */
+.hero-divider{
+  display:flex;align-items:center;gap:12px;
+  margin:28px 0 22px;
+  opacity:0;animation:fadeUp .7s .9s var(--ease) forwards;
+}
+.hd-line{height:1px;width:48px;background:linear-gradient(90deg,var(--crimson),var(--gold2))}
+.hd-diamond{width:6px;height:6px;background:var(--gold2);transform:rotate(45deg)}
+.hd-text{font-size:9px;letter-spacing:.3em;color:rgba(250,247,242,.35);text-transform:uppercase;font-weight:300}
+
+/* DESCRIPTION */
+.hero-desc{
+  font-size:clamp(14px,1vw,16.5px);line-height:1.9;
+  color:rgba(250,247,242,.5);max-width:520px;
+  font-weight:300;letter-spacing:.015em;
+  margin-bottom:38px;
+  opacity:0;animation:fadeUp .75s 1.05s var(--ease) forwards;
+}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+
+/* CTA BUTTONS */
+.hero-cta{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .75s 1.2s var(--ease) forwards;
+}
+.btn-primary-hero{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;
+  background:var(--crimson);color:#fff;
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;
+  border:1px solid rgba(240,201,106,0.2);
+  text-decoration:none;
+  position:relative;overflow:hidden;transition:all .32s var(--ease);
+  box-shadow:0 10px 40px rgba(139,26,26,.6);
+}
+.btn-primary-hero::before{content:'';position:absolute;inset:0;background:var(--crimson2);transform:translateX(-101%);transition:transform .32s var(--ease)}
+.btn-primary-hero:hover::before{transform:translateX(0)}
+.btn-primary-hero:hover{box-shadow:0 18px 56px rgba(139,26,26,.75);border-color:rgba(240,201,106,.35)}
+.btn-primary-hero span,.btn-primary-hero svg{position:relative;z-index:1}
+.btn-primary-hero .btn-icon-wrap{
+  width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .28s;
+}
+.btn-primary-hero:hover .btn-icon-wrap{transform:translateX(4px)}
+
+.btn-ghost-hero{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 26px;
+  border:1px solid rgba(240,201,106,.35);
+  color:rgba(240,201,106,.85);
+  font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:300;
+  text-decoration:none;position:relative;overflow:hidden;transition:all .28s;
+}
+.btn-ghost-hero::before{content:'';position:absolute;inset:0;background:rgba(240,201,106,.08);transform:translateX(-101%);transition:transform .28s var(--ease)}
+.btn-ghost-hero:hover::before{transform:translateX(0)}
+.btn-ghost-hero:hover{border-color:var(--gold3);color:var(--gold3)}
+.btn-ghost-hero span{position:relative;z-index:1}
+
+/* FLOATING STAT CARDS — TravelGuru inspired */
+.hero-floaters{
+  position:absolute;right:6vw;top:50%;transform:translateY(-50%);
+  z-index:8;display:flex;flex-direction:column;gap:12px;
+  opacity:0;animation:floatersIn .9s 1.4s var(--ease) forwards;
+}
+@keyframes floatersIn{to{opacity:1}}
+.floater-card{
+  background:rgba(250,247,242,0.07);
+  border:1px solid rgba(184,146,42,0.22);
+  backdrop-filter:blur(16px);
+  padding:14px 18px;min-width:160px;
+  display:flex;align-items:center;gap:12px;
+  position:relative;overflow:hidden;
+  transition:all .3s var(--ease);
+  cursor:default;
+}
+.floater-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(to bottom,var(--crimson),var(--gold2));
+  transform:scaleY(0);transform-origin:bottom;transition:transform .3s;
+}
+.floater-card:hover{background:rgba(250,247,242,.13);border-color:rgba(240,201,106,.45);transform:translateX(-5px)}
+.floater-card:hover::before{transform:scaleY(1)}
+.floater-icon{width:36px;height:36px;background:rgba(139,26,26,.5);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.floater-icon svg{width:16px;height:16px;color:var(--gold3)}
+.floater-val{font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;font-weight:600;line-height:1}
+.floater-label{font-size:8.5px;letter-spacing:.1em;color:rgba(255,255,255,.5);font-weight:300;margin-top:1px}
+
+/* ANIMATED CIRCLE ORNAMENT */
+.hero-circle-ornament{
+  position:absolute;right:calc(6vw + 190px);top:50%;transform:translateY(-50%);
+  z-index:3;pointer-events:none;
+  opacity:0;animation:floatersIn 1.2s 1.6s ease forwards;
+}
+.hco-ring{
+  position:absolute;border-radius:50%;border:1px solid rgba(184,146,42,0.12);
+}
+.hco-ring:nth-child(1){width:320px;height:320px;top:50%;left:50%;transform:translate(-50%,-50%);animation:spinSlow 24s linear infinite}
+.hco-ring:nth-child(2){width:240px;height:240px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(139,26,26,0.15);animation:spinSlow 18s linear infinite reverse}
+.hco-ring:nth-child(3){width:160px;height:160px;top:50%;left:50%;transform:translate(-50%,-50%);animation:spinSlow 12s linear infinite}
+.hco-center{
+  position:relative;z-index:1;
+  width:80px;height:80px;border-radius:50%;
+  background:rgba(139,26,26,0.25);border:1px solid rgba(240,201,106,0.3);
+  display:flex;align-items:center;justify-content:center;
+}
+.hco-center svg{width:32px;height:32px;color:var(--gold2)}
+.hco-dot{
+  position:absolute;width:6px;height:6px;border-radius:50%;background:var(--gold2);
+  box-shadow:0 0 8px var(--gold2);
+}
+@keyframes spinSlow{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hco-wrap{
+  width:320px;height:320px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* SCROLL INDICATOR */
+.scroll-ind{
+  position:absolute;bottom:90px;left:7vw;z-index:8;
+  display:flex;align-items:center;gap:12px;
+  opacity:0;animation:fadeUp .7s 1.6s var(--ease) forwards;
+}
+.scroll-wheel{
+  width:24px;height:38px;border:1.5px solid rgba(250,247,242,.25);border-radius:12px;
+  display:flex;justify-content:center;padding-top:6px;
+}
+.scroll-dot{width:3px;height:8px;background:var(--gold2);border-radius:2px;animation:scrollAnim 1.8s ease-in-out infinite}
+@keyframes scrollAnim{0%{transform:translateY(0);opacity:1}100%{transform:translateY(14px);opacity:0}}
+.scroll-text{font-size:8.5px;letter-spacing:.38em;color:rgba(250,247,242,.35);text-transform:uppercase;font-weight:300}
+
+/* BOTTOM STATS BAR */
+.hero-stats-bar{
+  position:absolute;bottom:0;left:0;right:0;z-index:8;
+  display:grid;grid-template-columns:repeat(5,1fr);
+  background:rgba(250,247,242,0.96);
+  backdrop-filter:blur(20px);
+  border-top:2px solid rgba(184,146,42,.3);
+  transform:translateY(100%);
+  animation:barUp .8s 1.5s var(--ease) forwards;
+}
+@keyframes barUp{to{transform:translateY(0)}}
+.stat-item{
+  padding:18px 10px;border-right:1px solid rgba(139,26,26,.07);
+  text-align:center;transition:all .22s;cursor:default;position:relative;overflow:hidden;
+}
+.stat-item:last-child{border-right:none}
+.stat-item::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--crimson),var(--gold2));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s;
+}
+.stat-item:hover::before{transform:scaleX(1)}
+.stat-item:hover{background:#fff}
+.stat-v{font-family:'Cormorant Garamond',serif;font-size:clamp(18px,1.8vw,28px);color:var(--crimson);font-weight:700;line-height:1}
+.stat-l{font-size:7px;letter-spacing:.1em;color:rgba(30,16,8,.4);margin-top:3px;text-transform:uppercase;font-weight:300}
+
+/* SLIDE INDICATORS */
+.hero-dots{
+  position:absolute;bottom:95px;right:48px;z-index:8;
+  display:flex;gap:8px;align-items:center;
+}
+.h-dot{
+  width:28px;height:2px;background:rgba(250,247,242,.18);cursor:pointer;
+  position:relative;overflow:hidden;transition:all .3s;
+}
+.h-dot.active{width:42px}
+.h-dot-fill{height:100%;width:0;background:var(--gold2);position:absolute;top:0;left:0}
+.h-dot.active .h-dot-fill{animation:dotFill 7s linear forwards}
+@keyframes dotFill{to{width:100%}}
+
+/* TOP ACCENT LINE */
+.hero-top-accent{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold2),var(--crimson),var(--gold2),transparent);
+  z-index:9;background-size:200%;animation:accentMove 4s linear infinite;
+}
+@keyframes accentMove{0%{background-position:0%}100%{background-position:200%}}
+
+/* CORNER DECORATION */
+.corner-dec{position:absolute;z-index:3;pointer-events:none}
+.corner-dec-tl{top:110px;left:32px;width:50px;height:50px;border-top:1.5px solid rgba(240,201,106,.22);border-left:1.5px solid rgba(240,201,106,.22);opacity:0;animation:fadeUp .6s 1.8s ease forwards}
+.corner-dec-br{bottom:85px;right:32px;width:50px;height:50px;border-bottom:1.5px solid rgba(240,201,106,.22);border-right:1.5px solid rgba(240,201,106,.22);opacity:0;animation:fadeUp .6s 1.8s ease forwards}
+
+/* WA FLOAT */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;width:52px;height:52px;
+  border-radius:50%;background:#25d366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 18px rgba(37,211,102,.4);z-index:9999;
+  text-decoration:none;transition:transform .25s;
+  animation:waPulse 3s infinite;
+}
+.wa-float:hover{transform:scale(1.1)}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.4),0 0 0 0 rgba(37,211,102,.3)}50%{box-shadow:0 4px 18px rgba(37,211,102,.4),0 0 0 12px rgba(37,211,102,0)}}
+.wa-float svg{width:26px;height:26px;fill:#fff}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero-floaters,.hero-circle-ornament,.hero-side-tag{display:none}
+  .nav-top-strip{padding:0 16px}
+  .nav-main{padding:0 16px}
+  .hero-content{padding:0 22px}
+  .hero-dots{right:22px;bottom:90px}
+}
+@media(max-width:640px){
+  .hero-stats-bar{grid-template-columns:repeat(3,1fr)}
+  .stat-item:nth-child(4),.stat-item:nth-child(5){display:none}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .btn-primary-hero,.btn-ghost-hero{justify-content:center}
+  .nav-link{display:none}
+  .nav-right .nav-wa{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <!-- TOP STRIP -->
+  <div class="nav-top-strip">
+    <div class="nav-top-item">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 5l7 5 7-5"/></svg>
+      <a href="mailto:contactus@jbalaji.com">contactus@jbalaji.com</a>
+    </div>
+    <div class="nav-top-item">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 1C5.2 1 3 3.2 3 6c0 4.2 5 9 5 9s5-4.8 5-9c0-2.8-2.2-5-5-5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+      Mamadi Manjang Highway, Kanifing Jimpex, Banjul
+    </div>
+    <div class="nav-top-right">
+      <div class="nav-top-item">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="7"/><polyline points="8,4 8,8 11,10"/></svg>
+        Mon – Sat: 8AM – 7PM
+      </div>
+    </div>
+  </div>
+  <!-- MAIN NAV -->
+  <div class="nav-main">
+    <div class="nav-logo">
+      <div class="nav-logo-img">
+        <img src="https://academylinkx.site/wp-content/uploads/2026/04/Asset-7.png" alt="JBG"/>
+      </div>
+      <div class="nav-logo-text">
+        <div class="n1">J BALAJI GROUP</div>
+        <div class="n2">Est. 2007 · Banjul, The Gambia</div>
+      </div>
+    </div>
+    <div class="nav-sep"></div>
+    <div class="nav-links">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Divisions</a>
+      <a href="#" class="nav-link">Products</a>
+      <a href="#" class="nav-link">Careers</a>
+      <a href="#" class="nav-link">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://wa.me/2202000170" class="nav-wa" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <a href="#" class="btn-nav-cta"><span>Get In Touch</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- SLIDES -->
+  <div class="hero-slides" id="slides">
+    <div class="hero-slide active"><img src="https://academylinkx.site/wp-content/uploads/2026/04/Ultra-realistic_high-detail_industrial_202604221101.jpeg" alt="" loading="eager"/></div>
+    <div class="hero-slide"><img src="https://academylinkx.site/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-02-at-4.42.28-PM.jpeg" alt="" loading="lazy"/></div>
+    <div class="hero-slide"><img src="https://academylinkx.site/wp-content/uploads/2026/04/An_ultra-realistic_industrial_202604221101.jpeg" alt="" loading="lazy"/></div>
+    <div class="hero-slide"><img src="https://academylinkx.site/wp-content/uploads/2026/04/20260403_151909.jpg_202604221100-1.jpeg" alt="" loading="lazy"/></div>
+    <div class="hero-slide"><img src="https://academylinkx.site/wp-content/uploads/2026/04/IMG20260404193048-1-scaled.jpeg" alt="" loading="lazy"/></div>
+  </div>
+
+  <!-- OVERLAYS -->
+  <div class="ov1"></div><div class="ov2"></div><div class="ov3"></div>
+
+  <!-- TOP ACCENT -->
+  <div class="hero-top-accent"></div>
+
+  <!-- GRID LINES -->
+  <div class="hero-grid">
+    <div class="hero-grid-line hgl-v1"></div>
+    <div class="hero-grid-line hgl-v2"></div>
+    <div class="hero-grid-line hgl-v3"></div>
+    <div class="hero-grid-line hgl-v4"></div>
+    <div class="hero-grid-line hgl-h1"></div>
+    <div class="hero-grid-line hgl-h2"></div>
+  </div>
+
+  <!-- FLOATING PARTICLES -->
+  <div class="particles" id="particles"></div>
+
+  <!-- CORNER DECORATIONS -->
+  <div class="corner-dec corner-dec-tl"></div>
+  <div class="corner-dec corner-dec-br"></div>
+
+  <!-- SIDE TAG -->
+  <div class="hero-side-tag">West Africa's Most Trusted Group &nbsp;·&nbsp; Est. 2007</div>
+
+  <!-- CONTENT -->
+  <div class="hero-content">
+    <div class="hero-inner">
+
+      <!-- BADGE -->
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <div class="hero-badge-text">Est. 2007 &nbsp;·&nbsp; Banjul, The Gambia &nbsp;·&nbsp; West Africa</div>
+      </div>
+
+      <!-- HEADLINE -->
+      <h1 class="hero-h1">
+        <span class="line1">
+          <span class="word"><span>Building</span></span>
+        </span>
+        <span class="accent">
+          <span class="word"><span>Futures</span></span>
+        </span>
+        <span class="line3">
+          <span class="word"><span>&amp; Crafting Legacy Across West Africa</span></span>
+        </span>
+      </h1>
+
+      <!-- DIVIDER -->
+      <div class="hero-divider">
+        <div class="hd-line"></div>
+        <div class="hd-diamond"></div>
+        <div class="hd-line" style="transform:scaleX(-1)"></div>
+        <div class="hd-text">7 Divisions · 18+ Years · 10,000+ Customers</div>
+      </div>
+
+      <!-- DESC -->
+      <p class="hero-desc">From luxury 5-star hospitality and premium automobiles to world-class roofing and building materials — J Balaji Group is West Africa's most trusted diversified conglomerate.</p>
+
+      <!-- CTA -->
+      <div class="hero-cta">
+        <a href="#" class="btn-primary-hero">
+          <span>Explore Divisions</span>
+          <div class="btn-icon-wrap">
+            <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" width="11" height="11"><path d="M2 7h10M8 3l4 4-4 4"/></svg>
+          </div>
+        </a>
+        <a href="https://wa.me/2202000170" target="_blank" class="btn-ghost-hero">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="rgba(240,201,106,0.85)"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING STAT CARDS -->
+  <div class="hero-floaters">
+    <div class="floater-card">
+      <div class="floater-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/></svg>
+      </div>
+      <div>
+        <div class="floater-val">18+</div>
+        <div class="floater-label">Years of Excellence</div>
+      </div>
+    </div>
+    <div class="floater-card">
+      <div class="floater-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="8" width="7" height="14" rx="1"/><rect x="15" y="4" width="8" height="18" rx="1"/><rect x="8" y="1" width="7" height="21" rx="1"/></svg>
+      </div>
+      <div>
+        <div class="floater-val">7+</div>
+        <div class="floater-label">Active Divisions</div>
+      </div>
+    </div>
+    <div class="floater-card">
+      <div class="floater-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <div>
+        <div class="floater-val">10K+</div>
+        <div class="floater-label">Happy Customers</div>
+      </div>
+    </div>
+    <div class="floater-card">
+      <div class="floater-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 22V8l9-6 9 6v14"/><path d="M9 22V12h6v10"/></svg>
+      </div>
+      <div>
+        <div class="floater-val">500+</div>
+        <div class="floater-label">Team Members</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIRCLE ORNAMENT -->
+  <div class="hero-circle-ornament">
+    <div class="hco-wrap">
+      <div class="hco-ring"></div>
+      <div class="hco-ring"></div>
+      <div class="hco-ring"></div>
+      <div class="hco-center">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" width="32" height="32"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26 12,2"/></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCROLL INDICATOR -->
+  <div class="scroll-ind">
+    <div class="scroll-wheel"><div class="scroll-dot"></div></div>
+    <div class="scroll-text">Scroll to Explore</div>
+  </div>
+
+  <!-- SLIDE DOTS -->
+  <div class="hero-dots" id="heroDots">
+    <div class="h-dot active"><div class="h-dot-fill"></div></div>
+    <div class="h-dot"><div class="h-dot-fill"></div></div>
+    <div class="h-dot"><div class="h-dot-fill"></div></div>
+    <div class="h-dot"><div class="h-dot-fill"></div></div>
+    <div class="h-dot"><div class="h-dot-fill"></div></div>
+  </div>
+
+  <!-- STATS BAR -->
+  <div class="hero-stats-bar">
+    <div class="stat-item"><div class="stat-v">18+</div><div class="stat-l">Years of Excellence</div></div>
+    <div class="stat-item"><div class="stat-v">7+</div><div class="stat-l">Active Divisions</div></div>
+    <div class="stat-item"><div class="stat-v">10,000+</div><div class="stat-l">Happy Customers</div></div>
+    <div class="stat-item"><div class="stat-v">500+</div><div class="stat-l">Team Members</div></div>
+    <div class="stat-item"><div class="stat-v">500 Cr+</div><div class="stat-l">Group Turnover</div></div>
+  </div>
+</section>
+
+<!-- WA FLOAT -->
+<a href="https://wa.me/2202000170" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// PARTICLES
+(function(){
+  const c=document.getElementById('particles');
+  for(let i=0;i<22;i++){
+    const p=document.createElement('div');
+    p.className='particle';
+    p.style.cssText=`left:${Math.random()*100}%;bottom:${Math.random()*40}%;--dur:${6+Math.random()*8}s;--del:${Math.random()*6}s;width:${2+Math.random()*3}px;height:${2+Math.random()*3}px;opacity:0`;
+    c.appendChild(p);
+  }
+})();
+
+// SLIDESHOW
+let cur=0;
+const TOTAL=5;
+const slides=document.querySelectorAll('.hero-slide');
+const dots=document.querySelectorAll('.h-dot');
+let timer=null;
+
+function goTo(i){
+  slides[cur].classList.remove('active');
+  dots[cur].classList.remove('active');
+  cur=i;
+  slides[cur].classList.add('active');
+  const d=dots[cur];
+  d.classList.add('active');
+  const f=d.querySelector('.h-dot-fill');
+  f.style.animation='none';void f.offsetHeight;f.style.animation='';
+  clearInterval(timer);
+  timer=setInterval(()=>goTo((cur+1)%TOTAL),7000);
+}
+
+dots.forEach((d,i)=>d.addEventListener('click',()=>goTo(i)));
+timer=setInterval(()=>goTo((cur+1)%TOTAL),7000);
+
+// NAV SCROLL
+const nav=document.querySelector('nav');
+window.addEventListener('scroll',()=>{
+  nav.style.boxShadow=window.scrollY>10?'0 4px 28px rgba(14,8,6,.16)':'';
+},{passive:true});
+</script>
+</body>
+</html>
