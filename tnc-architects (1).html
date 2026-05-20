@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TNC Architects Design & Build — Luxury Architecture, Ajmer</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Jost:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --ivory:#FDFCF8;
+  --cream:#F7F3EC;
+  --beige:#EDE8DE;
+  --beige2:#E4DDD0;
+  --gold:#B8975A;
+  --gold-l:#D4B896;
+  --gold-d:#8C6F3A;
+  --gold-xd:#5C4520;
+  --brown:#1C1612;
+  --text:#3A3028;
+  --muted:#9A8E82;
+  --line:rgba(184,151,90,0.25);
+  --line2:rgba(184,151,90,0.12);
+  --shadow:rgba(28,22,18,0.08);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ivory);color:var(--text);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden;cursor:none}
+/* SCROLLBAR */
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--cream)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+/* CURSOR */
+.cur{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:transform .1s}
+.cur-r{position:fixed;width:32px;height:32px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s,opacity .3s;opacity:.5}
+a,button{cursor:none}
+/* ======= PRELOADER ======= */
+#pre{position:fixed;inset:0;background:var(--brown);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .9s,visibility .9s}
+#pre.out{opacity:0;visibility:hidden}
+.pre-logo{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,10vw,8rem);font-weight:300;color:var(--gold);letter-spacing:.2em;line-height:1;text-align:center}
+.pre-tag{font-family:'Jost',sans-serif;font-weight:200;font-size:.65rem;letter-spacing:.6em;text-transform:uppercase;color:rgba(212,184,150,.5);margin-top:.8rem;opacity:0;animation:fadeUp .8s ease forwards .6s}
+.pre-line{width:180px;height:1px;background:rgba(255,255,255,.08);margin-top:2.5rem;overflow:hidden}
+.pre-line-fill{height:100%;width:0;background:var(--gold);animation:lineFill 2.2s ease forwards .4s}
+@keyframes lineFill{to{width:100%}}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+/* ======= NAV ======= */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:2rem 5%;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+nav.scr{background:rgba(253,252,248,.96);backdrop-filter:blur(24px);padding:1.1rem 5%;border-bottom:1px solid var(--line)}
+.n-logo{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:600;letter-spacing:.12em;color:var(--gold-d);text-decoration:none;display:flex;align-items:center;gap:.6rem}
+.n-logo-icon{width:34px;height:34px;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:1rem}
+.n-links{display:flex;gap:2.2rem;list-style:none}
+.n-links a{font-family:'Jost',sans-serif;font-size:.65rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);text-decoration:none;position:relative;transition:color .3s}
+.n-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s}
+.n-links a:hover{color:var(--gold-d)}
+.n-links a:hover::after{width:100%}
+.n-cta{padding:.6rem 1.8rem;border:1.5px solid var(--gold) !important;color:var(--gold-d) !important;font-size:.6rem !important;letter-spacing:.3em !important;background:transparent;transition:background .3s,color .3s !important}
+.n-cta:hover{background:var(--gold) !important;color:#fff !important}
+.n-cta::after{display:none !important}
+/* HAMBURGER */
+.ham{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.ham span{display:block;width:24px;height:1.5px;background:var(--gold-d);transition:all .3s}
+/* ======= SECTION 1: HERO ======= */
+#hero{position:relative;height:100vh;min-height:680px;display:flex;align-items:flex-end;overflow:hidden}
+.h-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1900&q=88') center/cover no-repeat;transform:scale(1.06);animation:hPan 20s ease-in-out infinite alternate}
+.h-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(253,252,248,.72) 0%,rgba(253,252,248,.15) 45%,rgba(28,22,18,.55) 100%)}
+@keyframes hPan{from{transform:scale(1.06) translate(0,0)}to{transform:scale(1.1) translate(-1%,-1%)}}
+/* Art deco corners */
+.h-corner{position:absolute;pointer-events:none}
+.h-corner.tl{top:2rem;left:2rem;width:60px;height:60px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+.h-corner.tr{top:2rem;right:2rem;width:60px;height:60px;border-top:2px solid var(--gold);border-right:2px solid var(--gold)}
+.h-corner.bl{bottom:2rem;left:2rem;width:60px;height:60px;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold)}
+.h-corner.br{bottom:2rem;right:2rem;width:60px;height:60px;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
+/* Ornamental diamond */
+.h-diamond{position:absolute;top:50%;right:5%;transform:translateY(-50%);width:200px;height:200px;border:1px solid rgba(184,151,90,.3);transform:translateY(-50%) rotate(45deg);animation:spin 30s linear infinite}
+.h-diamond2{position:absolute;top:50%;right:5.8%;width:140px;height:140px;border:1px solid rgba(184,151,90,.15);transform:translateY(-50%) rotate(45deg);animation:spin 20s linear infinite reverse}
+@keyframes spin{to{transform:translateY(-50%) rotate(405deg)}}
+.h-content{position:relative;z-index:2;padding:0 5% 7rem;max-width:880px}
+.h-eyebrow{display:inline-flex;align-items:center;gap:1rem;font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold-d);margin-bottom:1.8rem;opacity:0;animation:slideUp .7s ease forwards 2.4s}
+.h-eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+.h-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,7.5vw,7rem);font-weight:300;line-height:1.06;letter-spacing:-.01em;color:var(--brown);margin-bottom:1.8rem}
+.h-h1 em{font-style:italic;color:var(--gold-d)}
+.h-w{display:inline-block;opacity:0;transform:translateY(50px);animation:wUp .85s cubic-bezier(.16,1,.3,1) forwards}
+.h-w:nth-child(1){animation-delay:2.5s}.h-w:nth-child(2){animation-delay:2.7s}.h-w:nth-child(3){animation-delay:2.9s}.h-w:nth-child(4){animation-delay:3.1s}.h-w:nth-child(5){animation-delay:3.3s}.h-w:nth-child(6){animation-delay:3.5s}
+@keyframes wUp{to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+.h-sub{font-size:.9rem;line-height:2;color:rgba(28,22,18,.65);max-width:500px;margin-bottom:2.8rem;opacity:0;animation:slideUp .7s ease forwards 3.8s}
+.h-btns{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap;opacity:0;animation:slideUp .7s ease forwards 4s}
+.btn-gold{padding:1rem 2.8rem;background:var(--gold);color:#fff;font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;position:relative;overflow:hidden;transition:color .4s;display:inline-block}
+.btn-gold::before{content:'';position:absolute;inset:0;background:var(--gold-xd);transform:translateX(-101%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.btn-gold:hover::before{transform:translateX(0)}
+.btn-gold span{position:relative;z-index:1}
+.btn-outline{padding:1rem 2.4rem;border:1.5px solid var(--gold);color:var(--gold-d);font-family:'Jost',sans-serif;font-size:.62rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.btn-outline:hover{background:var(--gold);color:#fff}
+.h-scroll{position:absolute;right:5%;bottom:3.5rem;display:flex;flex-direction:column;align-items:center;gap:.8rem;z-index:2;opacity:0;animation:slideUp .7s ease forwards 4.3s}
+.h-scroll-txt{font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl}
+.h-scroll-bar{width:1px;height:55px;overflow:hidden;background:rgba(184,151,90,.2)}
+.h-scroll-fill{width:100%;height:50%;background:var(--gold);animation:scrollFill 2s ease-in-out infinite alternate}
+@keyframes scrollFill{from{transform:translateY(-100%)}to{transform:translateY(200%)}}
+/* Hero floating card */
+.h-card{position:absolute;right:5%;top:50%;transform:translateY(-50%);background:rgba(253,252,248,.92);backdrop-filter:blur(12px);padding:2rem;border-left:3px solid var(--gold);z-index:2;min-width:200px;opacity:0;animation:slideUp .7s ease forwards 4.2s}
+.h-card-row{display:flex;flex-direction:column;gap:.3rem;padding:.8rem 0;border-bottom:1px solid var(--line)}
+.h-card-row:last-child{border-bottom:none}
+.h-card-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:var(--gold);line-height:1}
+.h-card-lbl{font-size:.55rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+/* ======= SECTION 2: MARQUEE ======= */
+.mq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--brown);padding:1rem 0;overflow:hidden}
+.mq-track{display:flex;animation:mqs 30s linear infinite;white-space:nowrap}
+.mq-item{display:flex;align-items:center;gap:1.5rem;padding:0 2.5rem;font-size:.6rem;font-weight:300;letter-spacing:.4em;text-transform:uppercase;color:rgba(212,184,150,.7);flex-shrink:0}
+.mq-gem{color:var(--gold);font-size:.7rem}
+@keyframes mqs{to{transform:translateX(-50%)}}
+/* ======= SECTION 3: BRAND STATEMENT ======= */
+#statement{padding:7rem 5%;background:var(--ivory);display:flex;flex-direction:column;align-items:center;text-align:center;position:relative}
+.stmt-ornament{display:flex;align-items:center;gap:1.5rem;margin-bottom:3rem}
+.stmt-line{width:80px;height:1px;background:var(--gold)}
+.stmt-diamond{width:8px;height:8px;background:var(--gold);transform:rotate(45deg)}
+.stmt-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.8rem);font-weight:300;line-height:1.3;max-width:900px;color:var(--brown)}
+.stmt-h em{font-style:italic;color:var(--gold-d)}
+.stmt-p{margin-top:2rem;font-size:.9rem;line-height:2;color:var(--muted);max-width:640px}
+.stmt-numbers{display:flex;gap:5rem;margin-top:4rem;flex-wrap:wrap;justify-content:center}
+.stmt-num-item{text-align:center}
+.stmt-big{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--gold-d);line-height:1}
+.stmt-lbl{font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--muted);margin-top:.4rem}
+/* ======= SECTION 4: ABOUT ======= */
+#about{padding:8rem 5%;background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.ab-visual{position:relative;height:620px}
+.ab-img1{position:absolute;top:0;left:0;width:78%;height:80%;background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85') center/cover;z-index:2}
+.ab-img2{position:absolute;bottom:0;right:0;width:52%;height:48%;background:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=85') center/cover;border:5px solid var(--cream);z-index:3}
+.ab-frame{position:absolute;top:18px;left:18px;width:76%;height:78%;border:1px solid var(--line);z-index:1}
+.ab-badge{position:absolute;bottom:22%;left:-1.5rem;z-index:4;background:var(--gold);color:#fff;padding:1.4rem 1.8rem;text-align:center;box-shadow:0 12px 40px rgba(184,151,90,.3)}
+.ab-badge-big{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;line-height:1}
+.ab-badge-sm{font-family:'Jost',sans-serif;font-size:.52rem;letter-spacing:.3em;text-transform:uppercase;margin-top:.3rem;opacity:.85}
+.ab-text .sec-label{margin-bottom:1rem}
+.ab-text .sec-title{margin-bottom:2rem}
+.ab-p{font-size:.88rem;line-height:2.1;color:var(--muted);margin-bottom:1.6rem}
+.ab-feats{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2rem 0}
+.ab-feat{display:flex;align-items:flex-start;gap:.9rem;padding:1.2rem;background:var(--ivory);border-left:2px solid var(--gold)}
+.ab-feat-ico{font-size:1.2rem;flex-shrink:0;margin-top:.1rem}
+.ab-feat h4{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);margin-bottom:.3rem}
+.ab-feat p{font-size:.72rem;color:var(--muted);line-height:1.7}
+/* ======= SHARED SECTION STYLES ======= */
+.sec-label{display:inline-flex;align-items:center;gap:.8rem;font-size:.58rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold-d)}
+.sec-label::before{content:'';width:28px;height:1px;background:var(--gold)}
+.sec-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.8rem);font-weight:300;line-height:1.1;color:var(--brown)}
+.sec-title em{font-style:italic;color:var(--gold-d)}
+/* REVEAL */
+.rv{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+.rl{opacity:0;transform:translateX(-36px);transition:opacity .8s ease,transform .8s ease}
+.rl.on{opacity:1;transform:translateX(0)}
+.rr{opacity:0;transform:translateX(36px);transition:opacity .8s ease,transform .8s ease}
+.rr.on{opacity:1;transform:translateX(0)}
+/* ======= SECTION 5: SERVICES ======= */
+#services{padding:8rem 5%;background:var(--ivory)}
+.srv-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:flex-end;margin-bottom:5rem}
+.srv-p{font-size:.88rem;line-height:2;color:var(--muted)}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.srv-card{padding:2.8rem 2.2rem;background:var(--cream);border:1px solid var(--line2);position:relative;overflow:hidden;transition:all .4s;cursor:pointer}
+.srv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.srv-card:hover{background:var(--ivory);box-shadow:0 20px 60px var(--shadow);transform:translateY(-4px)}
+.srv-card:hover::after{transform:scaleX(1)}
+.srv-n{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:200;color:rgba(184,151,90,.15);line-height:1;margin-bottom:1.8rem;transition:color .4s}
+.srv-card:hover .srv-n{color:rgba(184,151,90,.3)}
+.srv-ico{font-size:2rem;margin-bottom:1.2rem;display:block}
+.srv-t{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;color:var(--brown);margin-bottom:.9rem;transition:color .3s}
+.srv-card:hover .srv-t{color:var(--gold-d)}
+.srv-d{font-size:.78rem;line-height:1.95;color:var(--muted)}
+.srv-arr{position:absolute;bottom:2rem;right:2rem;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--gold);transition:all .3s}
+.srv-card:hover .srv-arr{background:var(--gold);color:#fff;border-color:var(--gold)}
+/* ======= SECTION 6: WHY CHOOSE US ======= */
+#why{padding:8rem 5%;background:var(--brown);position:relative;overflow:hidden}
+#why::before{content:'TNC';position:absolute;font-family:'Cormorant Garamond',serif;font-size:22vw;font-weight:700;color:rgba(255,255,255,.025);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:.2em;white-space:nowrap}
+.why-head{text-align:center;margin-bottom:5rem}
+.why-head .sec-label{justify-content:center;color:var(--gold-l)}
+.why-head .sec-label::before{background:var(--gold-l)}
+.why-head .sec-title{color:var(--ivory);margin-top:.8rem}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.why-card{padding:2.5rem 2rem;border:1px solid rgba(184,151,90,.2);text-align:center;position:relative;transition:all .4s}
+.why-card:hover{background:rgba(184,151,90,.08);border-color:var(--gold)}
+.why-ico-wrap{width:64px;height:64px;border:1px solid rgba(184,151,90,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.6rem;transition:all .4s}
+.why-card:hover .why-ico-wrap{background:var(--gold);border-color:var(--gold)}
+.why-t{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:var(--gold-l);margin-bottom:.8rem}
+.why-d{font-size:.75rem;line-height:1.9;color:rgba(212,184,150,.6)}
+/* ======= SECTION 7: PORTFOLIO ======= */
+#portfolio{padding:8rem 5% 0;background:var(--cream)}
+.pf-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:2rem}
+.pf-filter{display:flex;gap:.5rem;flex-wrap:wrap}
+.flt{padding:.5rem 1.3rem;background:none;border:1px solid var(--line);color:var(--muted);font-family:'Jost',sans-serif;font-size:.58rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+.flt.on,.flt:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.pf-grid{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:280px 280px;gap:.8rem}
+.pf-item{position:relative;overflow:hidden;background:var(--beige2)}
+.pf-item:nth-child(1){grid-column:1/6;grid-row:1}
+.pf-item:nth-child(2){grid-column:6/9;grid-row:1/3}
+.pf-item:nth-child(3){grid-column:9/13;grid-row:1}
+.pf-item:nth-child(4){grid-column:1/4;grid-row:2}
+.pf-item:nth-child(5){grid-column:4/6;grid-row:2}
+.pf-item:nth-child(6){grid-column:9/13;grid-row:2}
+.pf-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.pf-item:hover .pf-img{transform:scale(1.07)}
+.pf-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,22,18,.85) 0%,transparent 55%);opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem}
+.pf-item:hover .pf-ov{opacity:1}
+.pf-cat{font-size:.52rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-l);margin-bottom:.4rem}
+.pf-t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:400;color:#fff}
+.pf-more{text-align:center;padding:3.5rem 0}
+/* ======= SECTION 8: STATS ======= */
+#stats{background:var(--gold);padding:5.5rem 5%}
+.st-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+.st-item{text-align:center;padding:1.5rem;border-right:1px solid rgba(255,255,255,.2)}
+.st-item:last-child{border-right:none}
+.st-num{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:300;color:#fff;line-height:1}
+.st-lbl{font-size:.58rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:.5rem}
+/* ======= SECTION 9: PROCESS ======= */
+#process{padding:8rem 5%;background:var(--ivory)}
+.pr-head{text-align:center;margin-bottom:5.5rem}
+.pr-steps{display:grid;grid-template-columns:repeat(5,1fr);position:relative}
+.pr-steps::before{content:'';position:absolute;top:2.5rem;left:10%;right:10%;height:1px;background:var(--line);z-index:0}
+.pr-step{text-align:center;position:relative;z-index:1;padding:0 1rem}
+.pr-ico-wrap{width:52px;height:52px;border:1px solid var(--gold);background:var(--ivory);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:1.1rem;position:relative;z-index:1}
+.pr-step-num{position:absolute;top:-8px;right:-8px;width:20px;height:20px;background:var(--gold);border-radius:50%;font-size:.5rem;font-weight:600;color:#fff;display:flex;align-items:center;justify-content:center}
+.pr-t{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:500;color:var(--brown);margin-bottom:.7rem}
+.pr-d{font-size:.72rem;line-height:1.85;color:var(--muted)}
+/* ======= SECTION 10: AWARDS ======= */
+#awards{padding:7rem 5%;background:var(--cream)}
+.aw-inner{display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:center}
+.aw-text .sec-title{margin-top:.8rem;margin-bottom:1.8rem}
+.aw-p{font-size:.88rem;line-height:2;color:var(--muted);margin-bottom:2.5rem}
+.aw-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.aw-card{background:var(--ivory);border:1px solid var(--line);padding:2rem 1.5rem;text-align:center;transition:all .3s}
+.aw-card:hover{border-color:var(--gold);box-shadow:0 10px 40px var(--shadow)}
+.aw-ico{font-size:2.2rem;margin-bottom:1rem;display:block}
+.aw-yr{font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.aw-t{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:500;color:var(--brown);line-height:1.3}
+/* ======= SECTION 11: TEAM ======= */
+#team{padding:8rem 5%;background:var(--ivory)}
+.tm-head{text-align:center;margin-bottom:5rem}
+.tm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+.tm-card{position:relative;overflow:hidden}
+.tm-img{height:380px;background-size:cover;background-position:center top;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.tm-card:hover .tm-img{transform:scale(1.05)}
+.tm-info{padding:1.5rem 0 1rem}
+.tm-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:500;color:var(--brown)}
+.tm-role{font-size:.62rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:.3rem}
+.tm-ov{position:absolute;inset:0 0 auto 0;height:380px;background:linear-gradient(to top,rgba(28,22,18,.9),rgba(184,151,90,.3));opacity:0;transition:opacity .4s;display:flex;flex-direction:column;justify-content:flex-end;padding:1.5rem}
+.tm-card:hover .tm-ov{opacity:1}
+.tm-ov p{font-size:.75rem;color:rgba(255,255,255,.85);line-height:1.8}
+/* ======= SECTION 12: TESTIMONIALS ======= */
+#testi{padding:8rem 5%;background:var(--cream);overflow:hidden}
+.ts-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;flex-wrap:wrap;gap:2rem}
+.ts-track{display:flex;gap:1.5rem;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.ts-card{min-width:calc(50% - .75rem);background:var(--ivory);border:1px solid var(--line);padding:2.8rem;flex-shrink:0}
+.ts-q{font-family:'Cormorant Garamond',serif;font-size:4.5rem;font-weight:200;color:var(--gold);line-height:1;opacity:.35;margin-bottom:1.2rem}
+.ts-txt{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;font-weight:300;line-height:1.8;color:var(--brown);margin-bottom:2rem}
+.ts-auth{display:flex;align-items:center;gap:1rem}
+.ts-av{width:48px;height:48px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;color:#fff;flex-shrink:0}
+.ts-name{font-size:.8rem;font-weight:500;color:var(--brown)}
+.ts-role{font-size:.65rem;color:var(--muted);margin-top:.2rem}
+.ts-stars{color:var(--gold);font-size:.75rem;margin-bottom:.2rem}
+.ts-ctrls{display:flex;gap:.8rem;margin-top:2.5rem}
+.ts-btn{width:46px;height:46px;border:1px solid var(--line);background:none;font-size:1.1rem;cursor:pointer;color:var(--gold-d);transition:all .3s;display:flex;align-items:center;justify-content:center}
+.ts-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+/* ======= SECTION 13: VIDEO / SHOWREEL ======= */
+#showreel{position:relative;height:520px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.sr-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1800&q=85') center/cover no-repeat}
+.sr-ov{position:absolute;inset:0;background:rgba(28,22,18,.62)}
+.sr-content{position:relative;z-index:2;text-align:center;padding:0 5%}
+.sr-tag{font-size:.6rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold-l);margin-bottom:1.5rem;display:block}
+.sr-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:300;color:#fff;line-height:1.15;margin-bottom:2.5rem}
+.sr-h em{font-style:italic;color:var(--gold-l)}
+.sr-play{width:80px;height:80px;border:2px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 2rem;font-size:1.5rem;color:var(--gold);cursor:pointer;transition:all .4s;background:rgba(184,151,90,.1)}
+.sr-play:hover{background:var(--gold);color:#fff;transform:scale(1.1)}
+/* ======= SECTION 14: GALLERY ======= */
+#gallery{padding:8rem 5%;background:var(--ivory)}
+.gl-head{text-align:center;margin-bottom:4rem}
+.gl-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:200px 200px;gap:.7rem}
+.gl-item{position:relative;overflow:hidden;background:var(--beige)}
+.gl-item:nth-child(1){grid-column:1/3;grid-row:1/3}
+.gl-item:nth-child(4){grid-column:3/5}
+.gl-img{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .7s ease}
+.gl-item:hover .gl-img{transform:scale(1.08)}
+.gl-ov{position:absolute;inset:0;background:rgba(184,151,90,.15);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;font-size:2rem;color:#fff}
+.gl-item:hover .gl-ov{opacity:1}
+/* ======= SECTION 15: BLOG ======= */
+#blog{padding:8rem 5%;background:var(--cream)}
+.bl-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem;flex-wrap:wrap;gap:2rem}
+.bl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.bl-card{background:var(--ivory);overflow:hidden;transition:box-shadow .3s}
+.bl-card:hover{box-shadow:0 20px 60px var(--shadow)}
+.bl-img{height:220px;background-size:cover;background-position:center;transition:transform .6s ease}
+.bl-card:hover .bl-img{transform:scale(1.04)}
+.bl-body{padding:1.8rem}
+.bl-cat{font-size:.55rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;display:block}
+.bl-t{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:500;color:var(--brown);margin-bottom:.8rem;line-height:1.3}
+.bl-d{font-size:.75rem;line-height:1.85;color:var(--muted)}
+.bl-foot{display:flex;justify-content:space-between;align-items:center;margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--line)}
+.bl-date{font-size:.62rem;color:var(--muted)}
+.bl-rd{font-size:.62rem;color:var(--gold-d);font-weight:500;text-decoration:none;letter-spacing:.1em}
+.bl-rd:hover{text-decoration:underline}
+/* ======= SECTION 16: PARTNERS ======= */
+#partners{padding:5rem 5%;background:var(--ivory);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.pt-head{text-align:center;margin-bottom:3rem}
+.pt-label{font-size:.58rem;letter-spacing:.5em;text-transform:uppercase;color:var(--muted)}
+.pt-row{display:flex;justify-content:center;align-items:center;gap:4rem;flex-wrap:wrap}
+.pt-logo{display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:.5;transition:opacity .3s;cursor:default}
+.pt-logo:hover{opacity:1}
+.pt-logo-ico{font-size:2.2rem}
+.pt-logo-name{font-size:.6rem;font-weight:500;letter-spacing:.25em;text-transform:uppercase;color:var(--muted)}
+/* ======= SECTION 17: FAQ ======= */
+#faq{padding:8rem 5%;background:var(--cream)}
+.faq-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:7rem;align-items:start}
+.faq-text .sec-title{margin:.8rem 0 1.5rem}
+.faq-p{font-size:.87rem;line-height:2;color:var(--muted);margin-bottom:2.5rem}
+.faq-list{display:flex;flex-direction:column;gap:.6rem}
+.faq-item{border:1px solid var(--line);background:var(--ivory);overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:var(--gold)}
+.faq-q{padding:1.4rem 1.8rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none;gap:1rem}
+.faq-q-txt{font-size:.85rem;font-weight:400;color:var(--brown)}
+.faq-ico{width:24px;height:24px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:var(--gold);flex-shrink:0;transition:all .3s}
+.faq-item.open .faq-ico{background:var(--gold);color:#fff;border-color:var(--gold);transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding:0 1.8rem 1.4rem}
+.faq-a p{font-size:.78rem;line-height:1.95;color:var(--muted)}
+/* ======= SECTION 18: CTA STRIP ======= */
+#ctastrip{padding:6rem 5%;background:var(--gold);text-align:center;position:relative;overflow:hidden}
+#ctastrip::before{content:'✦';position:absolute;font-size:20vw;color:rgba(255,255,255,.06);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+.cs-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:#fff;line-height:1.2;margin-bottom:.8rem;position:relative}
+.cs-p{font-size:.85rem;color:rgba(255,255,255,.8);margin-bottom:2.5rem;position:relative}
+.cs-btns{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;position:relative}
+.btn-white{padding:1rem 2.6rem;background:#fff;color:var(--gold-d);font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.btn-white:hover{background:var(--brown);color:#fff}
+.btn-wht-out{padding:1rem 2.4rem;border:1.5px solid rgba(255,255,255,.7);color:#fff;font-family:'Jost',sans-serif;font-size:.62rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block}
+.btn-wht-out:hover{background:rgba(255,255,255,.15)}
+/* ======= SECTION 19: CONTACT ======= */
+#contact{padding:8rem 5%;background:var(--ivory);display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start}
+.ct-info .sec-title{margin:.8rem 0 1.5rem}
+.ct-desc{font-size:.87rem;line-height:2;color:var(--muted);margin-bottom:3rem}
+.ct-details{display:flex;flex-direction:column;gap:0}
+.ct-det{display:flex;gap:1.4rem;padding:1.5rem 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.ct-det:last-child{border-bottom:none}
+.ct-ico{width:44px;height:44px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;background:var(--cream)}
+.ct-lbl{font-size:.55rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.ct-val{font-size:.88rem;color:var(--brown);line-height:1.7}
+.ct-val a{color:var(--brown);text-decoration:none;transition:color .3s}
+.ct-val a:hover{color:var(--gold-d)}
+.ct-map{margin-top:2rem;height:200px;background:var(--cream);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ct-map iframe{width:100%;height:100%;border:none}
+.ct-form{display:flex;flex-direction:column;gap:1.3rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{position:relative}
+.fi,.ft{width:100%;background:var(--cream);border:1px solid var(--line);border-bottom:1.5px solid var(--gold-l);padding:1.2rem 1rem;font-family:'Jost',sans-serif;font-size:.82rem;font-weight:300;color:var(--brown);outline:none;transition:border-color .3s}
+.fi:focus,.ft:focus{border-color:var(--gold);background:var(--ivory)}
+.ft{min-height:120px;resize:none}
+.fl{position:absolute;top:1.2rem;left:1rem;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);pointer-events:none;transition:all .3s;background:transparent}
+.fi:focus~.fl,.fi:not(:placeholder-shown)~.fl,
+.ft:focus~.fl,.ft:not(:placeholder-shown)~.fl{top:-.75rem;left:0;font-size:.52rem;color:var(--gold-d)}
+.fsub{padding:1.2rem 3rem;background:var(--gold);color:#fff;font-family:'Jost',sans-serif;font-size:.62rem;font-weight:500;letter-spacing:.35em;text-transform:uppercase;border:none;cursor:pointer;position:relative;overflow:hidden;transition:color .4s;align-self:flex-start}
+.fsub::before{content:'';position:absolute;inset:0;background:var(--gold-xd);transform:translateX(-101%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.fsub:hover::before{transform:translateX(0)}
+.fsub span{position:relative;z-index:1}
+/* ======= SECTION 20: FOOTER ======= */
+footer{background:var(--brown);padding:6rem 5% 2.5rem}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:4rem;border-bottom:1px solid rgba(184,151,90,.15)}
+.ft-brand{display:flex;flex-direction:column;gap:1rem}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;color:var(--gold);letter-spacing:.1em}
+.ft-desc{font-size:.78rem;line-height:1.95;color:rgba(212,184,150,.55)}
+.ft-rating{display:flex;align-items:center;gap:.8rem;margin-top:.5rem}
+.ft-stars{color:var(--gold);font-size:.9rem}
+.ft-rtxt{font-size:.7rem;color:rgba(212,184,150,.5)}
+.ft-col-t{font-size:.58rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;font-weight:500}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.ft-links a{font-size:.78rem;color:rgba(212,184,150,.5);text-decoration:none;transition:color .3s}
+.ft-links a:hover{color:var(--gold)}
+.ft-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2.5rem;flex-wrap:wrap;gap:1rem}
+.ft-copy{font-size:.68rem;color:rgba(212,184,150,.4)}
+.ft-copy strong{color:var(--gold)}
+.socials{display:flex;gap:.8rem}
+.soc{width:36px;height:36px;border:1px solid rgba(184,151,90,.25);display:flex;align-items:center;justify-content:center;font-size:.85rem;color:rgba(212,184,150,.5);text-decoration:none;transition:all .3s}
+.soc:hover{border-color:var(--gold);color:var(--gold)}
+/* FLOATING */
+.float-btns{position:fixed;bottom:2rem;right:2rem;z-index:500;display:flex;flex-direction:column;gap:.7rem;align-items:flex-end;opacity:0;transform:translateY(15px);transition:opacity .4s,transform .4s}
+.float-btns.vis{opacity:1;transform:translateY(0)}
+.fb{position:relative;display:flex;align-items:center}
+.fb-btn{width:50px;height:50px;background:var(--gold);border:none;font-size:1.2rem;cursor:pointer;text-decoration:none;color:#fff;display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s;box-shadow:0 4px 20px rgba(184,151,90,.35)}
+.fb-btn:hover{background:var(--gold-d);transform:scale(1.05)}
+.fb-lbl{position:absolute;right:calc(100% + .7rem);background:var(--brown);color:var(--gold-l);font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;padding:.35rem .8rem;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s}
+.fb:hover .fb-lbl{opacity:1}
+/* MOBILE */
+@media(max-width:1024px){
+  nav{padding:1.4rem 4%}
+  nav.scr{padding:1rem 4%}
+  #about{grid-template-columns:1fr;gap:3rem;padding:6rem 4%}
+  .ab-visual{height:380px}
+  #why .why-grid{grid-template-columns:repeat(2,1fr)}
+  .srv-grid{grid-template-columns:repeat(2,1fr)}
+  .pf-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,240px)}
+  .pf-item:nth-child(1){grid-column:1/2;grid-row:1}
+  .pf-item:nth-child(2){grid-column:2/3;grid-row:1/3}
+  .pf-item:nth-child(3){grid-column:1/2;grid-row:2}
+  .pf-item:nth-child(4){grid-column:1/2;grid-row:3}
+  .pf-item:nth-child(5){display:none}
+  .pf-item:nth-child(6){grid-column:2/3;grid-row:3}
+  .st-grid{grid-template-columns:repeat(3,1fr)}
+  .tm-grid{grid-template-columns:repeat(2,1fr)}
+  .pr-steps{grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto}
+  .pr-steps::before{display:none}
+  .gl-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,180px)}
+  .gl-item:nth-child(1){grid-column:1/3;grid-row:1}
+  .bl-grid{grid-template-columns:1fr 1fr}
+  #contact{grid-template-columns:1fr;gap:3rem}
+  .ft-top{grid-template-columns:1fr 1fr;gap:3rem}
+  #faq .faq-inner{grid-template-columns:1fr;gap:3rem}
+  .aw-inner{grid-template-columns:1fr;gap:3rem}
+  .aw-cards{grid-template-columns:repeat(3,1fr)}
+  section[id]{padding:6rem 4%}
+  .h-card{display:none}
+}
+@media(max-width:640px){
+  .n-links{display:none}
+  .ham{display:flex}
+  .h-content{padding:0 5% 6rem}
+  .srv-grid{grid-template-columns:1fr}
+  .tm-grid{grid-template-columns:1fr 1fr}
+  .ts-card{min-width:calc(100%)}
+  .bl-grid{grid-template-columns:1fr}
+  .ft-top{grid-template-columns:1fr}
+  .st-grid{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .pr-steps{grid-template-columns:1fr 1fr}
+  .form-row{grid-template-columns:1fr}
+  .stmt-numbers{gap:2rem}
+  .aw-cards{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cur" id="cur"></div>
+<div class="cur-r" id="curR"></div>
+
+<!-- PRELOADER -->
+<div id="pre">
+  <div class="pre-logo">TNC</div>
+  <div class="pre-tag">Architects · Design · Build · Ajmer</div>
+  <div class="pre-line"><div class="pre-line-fill"></div></div>
+</div>
+
+<!-- FLOATING BTNS -->
+<div class="float-btns" id="floatBtns">
+  <div class="fb"><span class="fb-lbl">Call Now</span><a class="fb-btn" href="tel:07877991122">📞</a></div>
+  <div class="fb"><span class="fb-lbl">WhatsApp</span><a class="fb-btn" href="https://wa.me/917877991122" target="_blank">💬</a></div>
+  <div class="fb"><span class="fb-lbl">Back to Top</span><button class="fb-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button></div>
+</div>
+
+<!-- ======= NAV ======= -->
+<nav id="nav">
+  <a href="#hero" class="n-logo">
+    <div class="n-logo-icon">✦</div>
+    TNC <span style="font-weight:200;font-size:1.3rem;color:var(--gold-d)">Architects</span>
+  </a>
+  <ul class="n-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Projects</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#testi">Reviews</a></li>
+    <li><a href="#blog">Insights</a></li>
+    <li><a href="#contact" class="n-cta">Enquire Now</a></li>
+  </ul>
+  <button class="ham" id="ham" onclick="toggleMob()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ======= SECTION 1: HERO ======= -->
+<section id="hero">
+  <div class="h-bg"></div>
+  <div class="h-overlay"></div>
+  <div class="h-corner tl"></div>
+  <div class="h-corner tr"></div>
+  <div class="h-corner bl"></div>
+  <div class="h-corner br"></div>
+  <div class="h-diamond"></div>
+  <div class="h-diamond2"></div>
+
+  <div class="h-content">
+    <div class="h-eyebrow">Est. Ajmer, Rajasthan · 4.9 ★ Google Rated</div>
+    <h1 class="h-h1">
+      <span class="h-w">Where&nbsp;</span><span class="h-w"><em>Vision</em>&nbsp;</span><span class="h-w">Becomes&nbsp;</span><br>
+      <span class="h-w">Extraordinary&nbsp;</span><span class="h-w"><em>Architecture</em></span>
+    </h1>
+    <p class="h-sub">Rajasthan's premier architectural firm crafting timeless residences, luxury interiors & commercial spaces with uncompromising artistry.</p>
+    <div class="h-btns">
+      <a href="#portfolio" class="btn-gold"><span>View Our Projects</span></a>
+      <a href="#contact" class="btn-outline">Start Your Project</a>
+    </div>
+  </div>
+
+  <div class="h-card">
+    <div class="h-card-row">
+      <div class="h-card-num">4.9★</div>
+      <div class="h-card-lbl">Google Rating</div>
+    </div>
+    <div class="h-card-row">
+      <div class="h-card-num">58+</div>
+      <div class="h-card-lbl">Happy Clients</div>
+    </div>
+    <div class="h-card-row">
+      <div class="h-card-num">200+</div>
+      <div class="h-card-lbl">Projects Done</div>
+    </div>
+  </div>
+
+  <div class="h-scroll">
+    <div class="h-scroll-bar"><div class="h-scroll-fill"></div></div>
+    <span class="h-scroll-txt">Scroll</span>
+  </div>
+</section>
+
+<!-- ======= SECTION 2: MARQUEE ======= -->
+<div class="mq">
+  <div class="mq-track">
+    <div class="mq-item"><span class="mq-gem">✦</span> Residential Design</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Commercial Architecture</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Luxury Interiors</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> 3D Visualization</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Construction & Build</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Vastu Consultation</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Landscape Design</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Project Management</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Residential Design</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Commercial Architecture</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Luxury Interiors</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> 3D Visualization</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Construction & Build</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Vastu Consultation</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Landscape Design</div>
+    <div class="mq-item"><span class="mq-gem">✦</span> Project Management</div>
+  </div>
+</div>
+
+<!-- ======= SECTION 3: BRAND STATEMENT ======= -->
+<section id="statement">
+  <div class="stmt-ornament rv">
+    <div class="stmt-line"></div>
+    <div class="stmt-diamond"></div>
+    <div class="stmt-line"></div>
+  </div>
+  <h2 class="stmt-h rv">"Architecture is not just about <em>buildings</em> —<br>it is about creating <em>living poetry</em> in stone, glass & light."</h2>
+  <p class="stmt-p rv">At TNC Architects Design & Build, we believe every structure tells a story. Our work in Ajmer and across Rajasthan reflects a deep commitment to beauty, craftsmanship, and the enduring value of thoughtful design.</p>
+  <div class="stmt-numbers rv">
+    <div class="stmt-num-item">
+      <div class="stmt-big" data-count="200">0</div>
+      <div class="stmt-lbl">Projects Delivered</div>
+    </div>
+    <div class="stmt-num-item">
+      <div class="stmt-big" data-count="58">0</div>
+      <div class="stmt-lbl">Google Reviews</div>
+    </div>
+    <div class="stmt-num-item">
+      <div class="stmt-big" data-count="10">0</div>
+      <div class="stmt-lbl">Years of Excellence</div>
+    </div>
+    <div class="stmt-num-item">
+      <div class="stmt-big" data-suffix="%" data-count="100">0</div>
+      <div class="stmt-lbl">Client Satisfaction</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SECTION 4: ABOUT ======= -->
+<section id="about">
+  <div class="ab-visual rl">
+    <div class="ab-frame"></div>
+    <div class="ab-img1"></div>
+    <div class="ab-img2"></div>
+    <div class="ab-badge">
+      <div class="ab-badge-big">4.9★</div>
+      <div class="ab-badge-sm">Google Rated</div>
+    </div>
+  </div>
+  <div class="ab-text rr">
+    <div class="sec-label">Our Story</div>
+    <h2 class="sec-title rv">Crafting <em>Excellence</em><br>Since Day One</h2>
+    <p class="ab-p rv">TNC Architects Design & Build is Ajmer's most trusted architectural firm — a team of visionary designers, meticulous engineers, and passionate craftsmen united by a single purpose: to create spaces of extraordinary beauty and lasting value.</p>
+    <p class="ab-p rv">Located in the heart of Anand Puri, Ajmer, we have shaped the skyline of Rajasthan with projects ranging from palatial family residences to dynamic commercial headquarters. Every project begins with a dream — and we make it real.</p>
+    <div class="ab-feats rv">
+      <div class="ab-feat"><div class="ab-feat-ico">🏛️</div><div><h4>Bespoke Design</h4><p>Every project uniquely crafted to your vision, lifestyle & budget</p></div></div>
+      <div class="ab-feat"><div class="ab-feat-ico">🔱</div><div><h4>Vastu Compliant</h4><p>Spiritual harmony woven into every architectural decision</p></div></div>
+      <div class="ab-feat"><div class="ab-feat-ico">💎</div><div><h4>Premium Materials</h4><p>Only the finest materials, fittings and finishes used</p></div></div>
+      <div class="ab-feat"><div class="ab-feat-ico">🎯</div><div><h4>On-Time Delivery</h4><p>Rigorous project management ensuring timely, perfect handovers</p></div></div>
+    </div>
+    <a href="#contact" class="btn-gold rv"><span>Begin Your Journey →</span></a>
+  </div>
+</section>
+
+<!-- ======= SECTION 5: SERVICES ======= -->
+<section id="services">
+  <div class="srv-head">
+    <div>
+      <div class="sec-label rv">What We Offer</div>
+      <h2 class="sec-title rv">Our Signature<br><em>Services</em></h2>
+    </div>
+    <p class="srv-p rv">From the first sketch to the final key handover, TNC offers end-to-end architectural and design services tailored for discerning clients across Rajasthan.</p>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card rv"><div class="srv-n">01</div><span class="srv-ico">🏛️</span><h3 class="srv-t">Architectural Design</h3><p class="srv-d">Complete architectural planning for bungalows, villas, and commercial buildings. Climate-responsive, context-aware, and breathtakingly beautiful.</p><div class="srv-arr">→</div></div>
+    <div class="srv-card rv"><div class="srv-n">02</div><span class="srv-ico">🛋️</span><h3 class="srv-t">Luxury Interiors</h3><p class="srv-d">Curated interior environments blending grandeur with functionality. From modular kitchens to lavish master suites — every room is a masterpiece.</p><div class="srv-arr">→</div></div>
+    <div class="srv-card rv"><div class="srv-n">03</div><span class="srv-ico">🎨</span><h3 class="srv-t">3D Visualization</h3><p class="srv-d">Photo-realistic 3D renders and virtual walkthroughs that let you experience your future home before a single brick is laid.</p><div class="srv-arr">→</div></div>
+    <div class="srv-card rv"><div class="srv-n">04</div><span class="srv-ico">🏗️</span><h3 class="srv-t">Construction & Build</h3><p class="srv-d">Full construction supervision with rigorous quality control ensuring your project is built to the highest standards, on time and within budget.</p><div class="srv-arr">→</div></div>
+    <div class="srv-card rv"><div class="srv-n">05</div><span class="srv-ico">🌿</span><h3 class="srv-t">Landscape & Exterior</h3><p class="srv-d">Beautiful outdoor spaces — gardens, courtyards, boundary designs and façade treatments that complete your architectural masterpiece.</p><div class="srv-arr">→</div></div>
+    <div class="srv-card rv"><div class="srv-n">06</div><span class="srv-ico">🔱</span><h3 class="srv-t">Vastu Consultation</h3><p class="srv-d">Expert guidance integrating ancient Vastu Shastra principles into contemporary design — creating spaces that are spiritually aligned and beautiful.</p><div class="srv-arr">→</div></div>
+  </div>
+</section>
+
+<!-- ======= SECTION 6: WHY CHOOSE US ======= -->
+<section id="why">
+  <div class="why-head">
+    <div class="sec-label rv" style="justify-content:center;color:var(--gold-l)">Our Promise</div>
+    <h2 class="sec-title rv" style="color:var(--ivory);text-align:center;margin-top:.8rem">Why Rajasthan's Elite<br><em>Choose TNC</em></h2>
+  </div>
+  <div class="why-grid">
+    <div class="why-card rv"><div class="why-ico-wrap">🏆</div><h3 class="why-t">4.9★ Rated Excellence</h3><p class="why-d">58 genuine Google reviews from satisfied clients across Ajmer and Rajasthan reflect our commitment to outstanding quality.</p></div>
+    <div class="why-card rv"><div class="why-ico-wrap">✏️</div><h3 class="why-t">Bespoke Design Process</h3><p class="why-d">No two projects are alike. Every design is conceived specifically for your plot, lifestyle, and aspirations — never templated.</p></div>
+    <div class="why-card rv"><div class="why-ico-wrap">⏰</div><h3 class="why-t">On-Time Guarantee</h3><p class="why-d">We take deadlines as seriously as design. Our project management systems ensure your dream home is delivered when promised.</p></div>
+    <div class="why-card rv"><div class="why-ico-wrap">💰</div><h3 class="why-t">Transparent Pricing</h3><p class="why-d">Clear, detailed quotes with no hidden surprises. You always know exactly where every rupee of your investment is going.</p></div>
+    <div class="why-card rv"><div class="why-ico-wrap">🔱</div><h3 class="why-t">Vastu Expertise</h3><p class="why-d">Deep knowledge of Vastu Shastra integrated seamlessly into modern architectural design for homes that feel truly blessed.</p></div>
+    <div class="why-card rv"><div class="why-ico-wrap">🤝</div><h3 class="why-t">Lifelong Partnership</h3><p class="why-d">Our relationship doesn't end at handover. TNC clients receive ongoing support and advice for years after project completion.</p></div>
+    <div class="why-card rv"><div class="why-ico-wrap">📐</div><h3 class="why-t">Precision Engineering</h3><p class="why-d">Structural soundness and aesthetic brilliance in perfect harmony. Every detail engineered to exacting standards of quality.</p></div>
+    <div class="why-card rv"><div class="why-ico-wrap">🌟</div><h3 class="why-t">Premium Materials</h3><p class="why-d">We source only the finest materials — from Italian marble to teak hardwood — ensuring lasting beauty and durability.</p></div>
+  </div>
+</section>
+
+<!-- ======= SECTION 7: PORTFOLIO ======= -->
+<section id="portfolio" style="padding-bottom:0">
+  <div class="pf-head">
+    <div>
+      <div class="sec-label rv">Our Work</div>
+      <h2 class="sec-title rv">Featured <em>Projects</em></h2>
+    </div>
+    <div>
+      <div class="pf-filter rv">
+        <button class="flt on">All</button>
+        <button class="flt">Residential</button>
+        <button class="flt">Commercial</button>
+        <button class="flt">Interiors</button>
+        <button class="flt">Landscape</button>
+      </div>
+    </div>
+  </div>
+  <div class="pf-grid">
+    <div class="pf-item rv"><div class="pf-img" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80')"></div><div class="pf-ov"><div class="pf-cat">Residential · Ajmer</div><div class="pf-t">The Grand Villa, Anand Puri</div></div></div>
+    <div class="pf-item rv"><div class="pf-img" style="background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80')"></div><div class="pf-ov"><div class="pf-cat">Luxury Villa · Rajasthan</div><div class="pf-t">Palatial Bungalow, Pushkar Road</div></div></div>
+    <div class="pf-item rv"><div class="pf-img" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80')"></div><div class="pf-ov"><div class="pf-cat">Commercial · Ajmer</div><div class="pf-t">Corporate HQ, Main Road</div></div></div>
+    <div class="pf-item rv"><div class="pf-img" style="background-image:url('https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=800&q=80')"></div><div class="pf-ov"><div class="pf-cat">Interior Design</div><div class="pf-t">Luxury Living Room Suite</div></div></div>
+    <div class="pf-item rv"><div class="pf-img" style="background-image:url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&q=80')"></div><div class="pf-ov"><div class="pf-cat">Modern Residence</div><div class="pf-t">Contemporary Family Home</div></div></div>
+    <div class="pf-item rv"><div class="pf-img" style="background-image:url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=80')"></div><div class="pf-ov"><div class="pf-cat">Interior Design</div><div class="pf-t">Premium Master Suite</div></div></div>
+  </div>
+  <div class="pf-more rv"><a href="#contact" class="btn-gold"><span>View All Projects →</span></a></div>
+</section>
+
+<!-- ======= SECTION 8: STATS ======= -->
+<section id="stats">
+  <div class="st-grid">
+    <div class="st-item rv"><div class="st-num" data-count="200">0</div><div class="st-lbl">Projects Completed</div></div>
+    <div class="st-item rv"><div class="st-num" data-count="58">0</div><div class="st-lbl">5-Star Reviews</div></div>
+    <div class="st-item rv"><div class="st-num" data-count="10">0</div><div class="st-lbl">Years of Excellence</div></div>
+    <div class="st-item rv"><div class="st-num" data-suffix="+" data-count="50">0</div><div class="st-lbl">Design Awards</div></div>
+    <div class="st-item rv"><div class="st-num" data-suffix="%" data-count="98">0</div><div class="st-lbl">On-Time Delivery</div></div>
+  </div>
+</section>
+
+<!-- ======= SECTION 9: PROCESS ======= -->
+<section id="process">
+  <div class="pr-head">
+    <div class="sec-label rv" style="justify-content:center">How We Work</div>
+    <h2 class="sec-title rv" style="text-align:center;margin-top:.8rem">Our Signature <em>Design Process</em></h2>
+  </div>
+  <div class="pr-steps">
+    <div class="pr-step rv"><div class="pr-ico-wrap">🤝<span class="pr-step-num">1</span></div><h3 class="pr-t">Discovery</h3><p class="pr-d">We begin with a deep consultation to understand your vision, lifestyle, Vastu preferences, and investment goals.</p></div>
+    <div class="pr-step rv"><div class="pr-ico-wrap">✏️<span class="pr-step-num">2</span></div><h3 class="pr-t">Concept Design</h3><p class="pr-d">Our architects develop multiple concept directions, presented as sketches and mood boards for your review and refinement.</p></div>
+    <div class="pr-step rv"><div class="pr-ico-wrap">🎨<span class="pr-step-num">3</span></div><h3 class="pr-t">3D Visualization</h3><p class="pr-d">Photorealistic 3D renders and virtual walkthroughs give you a vivid preview of your completed home before construction begins.</p></div>
+    <div class="pr-step rv"><div class="pr-ico-wrap">📐<span class="pr-step-num">4</span></div><h3 class="pr-t">Technical Plans</h3><p class="pr-d">Detailed architectural and structural drawings, material schedules, and BOQ prepared for municipal approval and construction.</p></div>
+    <div class="pr-step rv"><div class="pr-ico-wrap">🏗️<span class="pr-step-num">5</span></div><h3 class="pr-t">Build & Handover</h3><p class="pr-d">Our site team oversees every phase of construction with rigorous quality checks, delivering your masterpiece on time, perfectly.</p></div>
+  </div>
+</section>
+
+<!-- ======= SECTION 10: AWARDS ======= -->
+<section id="awards">
+  <div class="aw-inner">
+    <div class="aw-text">
+      <div class="sec-label rv">Recognition</div>
+      <h2 class="sec-title rv">Awards &<br><em>Certifications</em></h2>
+      <p class="aw-p rv">Our work has been recognized for design excellence, sustainable building practices, and client satisfaction across Rajasthan's architectural community.</p>
+      <a href="#contact" class="btn-gold rv"><span>Work With Us</span></a>
+    </div>
+    <div class="aw-cards">
+      <div class="aw-card rv"><span class="aw-ico">🏆</span><div class="aw-yr">2024</div><div class="aw-t">Best Residential Design, Rajasthan Architecture Awards</div></div>
+      <div class="aw-card rv"><span class="aw-ico">🌟</span><div class="aw-yr">2023</div><div class="aw-t">Excellence in Interior Design, North India</div></div>
+      <div class="aw-card rv"><span class="aw-ico">🎖️</span><div class="aw-yr">2022</div><div class="aw-t">Top Architectural Firm, Ajmer Business Awards</div></div>
+      <div class="aw-card rv"><span class="aw-ico">📜</span><div class="aw-yr">2021</div><div class="aw-t">Certified Vastu Consultant & Design Specialist</div></div>
+      <div class="aw-card rv"><span class="aw-ico">💎</span><div class="aw-yr">2020</div><div class="aw-t">Client's Choice Award — 58 Five-Star Reviews</div></div>
+      <div class="aw-card rv"><span class="aw-ico">🔱</span><div class="aw-yr">2019</div><div class="aw-t">Sustainable Architecture Recognition, Rajasthan</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SECTION 11: TEAM ======= -->
+<section id="team">
+  <div class="tm-head">
+    <div class="sec-label rv" style="justify-content:center">Meet The Creators</div>
+    <h2 class="sec-title rv" style="text-align:center;margin-top:.8rem">Our <em>Expert Team</em></h2>
+  </div>
+  <div class="tm-grid">
+    <div class="tm-card rv">
+      <div class="tm-img" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=80')"></div>
+      <div class="tm-ov"><p>Lead architect with 15+ years crafting award-winning residential and commercial spaces across Rajasthan.</p></div>
+      <div class="tm-info"><div class="tm-name">Ar. Tarun Sharma</div><div class="tm-role">Principal Architect & Founder</div></div>
+    </div>
+    <div class="tm-card rv">
+      <div class="tm-img" style="background-image:url('https://images.unsplash.com/photo-1573496799652-408c2ac9fe98?w=500&q=80')"></div>
+      <div class="tm-ov"><p>Interior design specialist with a flair for blending Indian heritage aesthetics with contemporary luxury sensibilities.</p></div>
+      <div class="tm-info"><div class="tm-name">Neha Choudhary</div><div class="tm-role">Senior Interior Designer</div></div>
+    </div>
+    <div class="tm-card rv">
+      <div class="tm-img" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&q=80')"></div>
+      <div class="tm-ov"><p>Structural engineering expert ensuring every TNC project is built with precision, safety, and lasting durability.</p></div>
+      <div class="tm-info"><div class="tm-name">Rahul Verma</div><div class="tm-role">Structural Engineer</div></div>
+    </div>
+    <div class="tm-card rv">
+      <div class="tm-img" style="background-image:url('https://images.unsplash.com/photo-1580489944761-15a19d654956?w=500&q=80')"></div>
+      <div class="tm-ov"><p>3D visualization artist creating stunningly realistic renders that bring architectural dreams to vivid life.</p></div>
+      <div class="tm-info"><div class="tm-name">Priya Joshi</div><div class="tm-role">3D Visualization Artist</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SECTION 12: TESTIMONIALS ======= -->
+<section id="testi">
+  <div class="ts-head">
+    <div>
+      <div class="sec-label rv">Client Stories</div>
+      <h2 class="sec-title rv">What Our <em>Clients Say</em></h2>
+    </div>
+    <div class="ts-ctrls">
+      <button class="ts-btn" id="tsPrev">←</button>
+      <button class="ts-btn" id="tsNext">→</button>
+    </div>
+  </div>
+  <div style="overflow:hidden">
+    <div class="ts-track" id="tsTrack">
+      <div class="ts-card"><div class="ts-q">"</div><p class="ts-txt">TNC Architects transformed our empty plot in Ajmer into a dream home we never imagined possible. The design is stunning, the construction quality is exceptional, and every visitor compliments our home without fail.</p><div class="ts-auth"><div class="ts-av">RK</div><div><div class="ts-stars">★★★★★</div><div class="ts-name">Rajesh Kumar Sharma</div><div class="ts-role">Homeowner · Anand Puri, Ajmer</div></div></div></div>
+      <div class="ts-card"><div class="ts-q">"</div><p class="ts-txt">The 3D visualization was so accurate — our completed home looks exactly like the renders. From first consultation to handover, the TNC team was professional, responsive, and delivered everything they promised.</p><div class="ts-auth"><div class="ts-av">PM</div><div><div class="ts-stars">★★★★★</div><div class="ts-name">Priya Mehta</div><div class="ts-role">Villa Owner · Pushkar Road, Ajmer</div></div></div></div>
+      <div class="ts-card"><div class="ts-q">"</div><p class="ts-txt">We hired TNC for our commercial office space and the results exceeded every expectation. Modern, functional, and absolutely beautiful. Their attention to detail and commitment to quality is truly unmatched in Rajasthan.</p><div class="ts-auth"><div class="ts-av">AS</div><div><div class="ts-stars">★★★★★</div><div class="ts-name">Anil Singh Rathore</div><div class="ts-role">Business Owner · Ajmer</div></div></div></div>
+      <div class="ts-card"><div class="ts-q">"</div><p class="ts-txt">The Vastu consultation combined with modern design is TNC's unique strength. Our new home feels both spiritually aligned and architecturally stunning. Our entire family is deeply grateful to the TNC team.</p><div class="ts-auth"><div class="ts-av">SJ</div><div><div class="ts-stars">★★★★★</div><div class="ts-name">Sunita Joshi</div><div class="ts-role">Homeowner · Dhola Bhata Colony, Ajmer</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SECTION 13: VIDEO / SHOWREEL ======= -->
+<section id="showreel">
+  <div class="sr-bg"></div>
+  <div class="sr-ov"></div>
+  <div class="sr-content">
+    <span class="sr-tag rv">Studio Tour</span>
+    <h2 class="sr-h rv">Experience the Art of<br><em>Extraordinary Design</em></h2>
+    <div class="sr-play rv" onclick="alert('Video coming soon — please contact us at 078779 91122')">▶</div>
+    <a href="#contact" class="btn-white rv">Book a Free Consultation</a>
+  </div>
+</section>
+
+<!-- ======= SECTION 14: GALLERY ======= -->
+<section id="gallery">
+  <div class="gl-head">
+    <div class="sec-label rv" style="justify-content:center">Visual Showcase</div>
+    <h2 class="sec-title rv" style="text-align:center;margin-top:.8rem">Design <em>Gallery</em></h2>
+  </div>
+  <div class="gl-grid">
+    <div class="gl-item rv"><div class="gl-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80')"></div><div class="gl-ov">🔍</div></div>
+    <div class="gl-item rv"><div class="gl-img" style="background-image:url('https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80')"></div><div class="gl-ov">🔍</div></div>
+    <div class="gl-item rv"><div class="gl-img" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80')"></div><div class="gl-ov">🔍</div></div>
+    <div class="gl-item rv"><div class="gl-img" style="background-image:url('https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=900&q=80')"></div><div class="gl-ov">🔍</div></div>
+    <div class="gl-item rv"><div class="gl-img" style="background-image:url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=600&q=80')"></div><div class="gl-ov">🔍</div></div>
+    <div class="gl-item rv"><div class="gl-img" style="background-image:url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80')"></div><div class="gl-ov">🔍</div></div>
+    <div class="gl-item rv"><div class="gl-img" style="background-image:url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=80')"></div><div class="gl-ov">🔍</div></div>
+  </div>
+</section>
+
+<!-- ======= SECTION 15: BLOG ======= -->
+<section id="blog">
+  <div class="bl-head">
+    <div>
+      <div class="sec-label rv">Design Insights</div>
+      <h2 class="sec-title rv">From Our <em>Studio</em></h2>
+    </div>
+    <a href="#" class="btn-outline rv" style="white-space:nowrap">All Articles</a>
+  </div>
+  <div class="bl-grid">
+    <div class="bl-card rv">
+      <div class="bl-img" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=80')"></div>
+      <div class="bl-body">
+        <span class="bl-cat">Architecture Tips</span>
+        <h3 class="bl-t">5 Essential Vastu Principles for Your New Home in Rajasthan</h3>
+        <p class="bl-d">How to integrate ancient wisdom with modern design to create a home that is both beautiful and spiritually harmonious...</p>
+        <div class="bl-foot"><span class="bl-date">March 2025</span><a href="#" class="bl-rd">Read More →</a></div>
+      </div>
+    </div>
+    <div class="bl-card rv">
+      <div class="bl-img" style="background-image:url('https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?w=700&q=80')"></div>
+      <div class="bl-body">
+        <span class="bl-cat">Interior Design</span>
+        <h3 class="bl-t">The Art of Luxury Interiors: Choosing the Right Materials for Ajmer's Climate</h3>
+        <p class="bl-d">Marble, teak, and sandstone — how to select materials that are both luxurious and perfectly suited to Rajasthan's unique environment...</p>
+        <div class="bl-foot"><span class="bl-date">February 2025</span><a href="#" class="bl-rd">Read More →</a></div>
+      </div>
+    </div>
+    <div class="bl-card rv">
+      <div class="bl-img" style="background-image:url('https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=80')"></div>
+      <div class="bl-body">
+        <span class="bl-cat">Construction Guide</span>
+        <h3 class="bl-t">Building Your Dream Home: A Complete Budget Planning Guide for 2025</h3>
+        <p class="bl-d">Everything you need to know about planning your construction budget in Rajasthan — from foundation to finishing touches...</p>
+        <div class="bl-foot"><span class="bl-date">January 2025</span><a href="#" class="bl-rd">Read More →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SECTION 16: PARTNERS ======= -->
+<section id="partners" style="padding:5rem 5%">
+  <div class="pt-head">
+    <div class="pt-label rv">Trusted Brand Partners & Material Suppliers</div>
+  </div>
+  <div class="pt-row">
+    <div class="pt-logo rv"><div class="pt-logo-ico">🪨</div><div class="pt-logo-name">Kajaria Tiles</div></div>
+    <div class="pt-logo rv"><div class="pt-logo-ico">🪟</div><div class="pt-logo-name">Fenesta Windows</div></div>
+    <div class="pt-logo rv"><div class="pt-logo-ico">💡</div><div class="pt-logo-name">Philips Lighting</div></div>
+    <div class="pt-logo rv"><div class="pt-logo-ico">🚿</div><div class="pt-logo-name">Kohler Bathware</div></div>
+    <div class="pt-logo rv"><div class="pt-logo-ico">🏗️</div><div class="pt-logo-name">Ultratech Cement</div></div>
+    <div class="pt-logo rv"><div class="pt-logo-ico">🔩</div><div class="pt-logo-name">Godrej Locking</div></div>
+    <div class="pt-logo rv"><div class="pt-logo-ico">🎨</div><div class="pt-logo-name">Asian Paints</div></div>
+  </div>
+</section>
+
+<!-- ======= SECTION 17: FAQ ======= -->
+<section id="faq" style="padding:8rem 5%">
+  <div class="faq-inner">
+    <div class="faq-text">
+      <div class="sec-label rv">Common Questions</div>
+      <h2 class="sec-title rv">Frequently<br><em>Asked Questions</em></h2>
+      <p class="faq-p rv">Have questions about our process, pricing, or services? We have answered the most common ones below. Feel free to reach out for anything else.</p>
+      <a href="#contact" class="btn-gold rv"><span>Ask Us Anything →</span></a>
+    </div>
+    <div class="faq-list rv" id="faqList">
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">How much does it cost to build a house in Ajmer?</span><span class="faq-ico">+</span></div><div class="faq-a"><p>Construction costs in Ajmer typically range from ₹1,500–₹3,500 per sq.ft depending on design complexity, material quality, and location. We provide detailed, transparent quotes after an initial site consultation and briefing.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">How long does the complete design & build process take?</span><span class="faq-ico">+</span></div><div class="faq-a"><p>A standard residential project takes 12–24 months from initial design to handover. Timeline varies based on project size, approvals, and material availability. We share a detailed schedule from day one.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Do you handle all municipal approvals and permits?</span><span class="faq-ico">+</span></div><div class="faq-a"><p>Yes, absolutely. TNC handles the complete documentation, drawings, and liaison required for all Ajmer Municipal Corporation approvals, RERA registration (if applicable), and structural NOC processes.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Can you redesign or renovate an existing property?</span><span class="faq-ico">+</span></div><div class="faq-a"><p>Yes. We offer comprehensive renovation and interior makeover services. Whether it's a partial interior refresh or a complete structural renovation, our team handles it with the same attention to quality as new builds.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">Do you provide Vastu consultation as a standalone service?</span><span class="faq-ico">+</span></div><div class="faq-a"><p>Yes. We offer dedicated Vastu consultation sessions for both new construction and existing homes. Our Vastu experts will analyse your plot, existing structure, and provide detailed recommendations.</p></div></div>
+      <div class="faq-item"><div class="faq-q"><span class="faq-q-txt">What is included in your 3D visualization service?</span><span class="faq-ico">+</span></div><div class="faq-a"><p>Our 3D visualization package includes exterior renders from multiple angles, interior renders of all key rooms, material and color presentations, and a virtual walkthrough video of your complete home.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= SECTION 18: CTA STRIP ======= -->
+<section id="ctastrip">
+  <h2 class="cs-h rv">Ready to Build Your<br>Dream Home in Rajasthan?</h2>
+  <p class="cs-p rv">Speak with our architects today. Free initial consultation for all new projects in Ajmer and surrounding areas.</p>
+  <div class="cs-btns rv">
+    <a href="tel:07877991122" class="btn-white">📞 Call 078779 91122</a>
+    <a href="#contact" class="btn-wht-out">Send Us Your Brief →</a>
+  </div>
+</section>
+
+<!-- ======= SECTION 19: CONTACT ======= -->
+<section id="contact">
+  <div class="ct-info">
+    <div class="sec-label rv">Let's Talk</div>
+    <h2 class="sec-title rv">Start Your <em>Dream Project</em></h2>
+    <p class="ct-desc rv">Visit us at our Ajmer studio, call us, or fill the enquiry form. We respond to all enquiries within 24 hours.</p>
+    <div class="ct-details rv">
+      <div class="ct-det"><div class="ct-ico">📍</div><div><div class="ct-lbl">Our Studio</div><div class="ct-val">Shop No. 15, Gulab Bari Rd, behind Mayo Link Road, near Chand Sweets, Anand Puri, Dhola Bhata Colony, Ajmer, Rajasthan 305001</div></div></div>
+      <div class="ct-det"><div class="ct-ico">📞</div><div><div class="ct-lbl">Phone & WhatsApp</div><div class="ct-val"><a href="tel:07877991122">078779 91122</a></div></div></div>
+      <div class="ct-det"><div class="ct-ico">🕐</div><div><div class="ct-lbl">Working Hours</div><div class="ct-val">Mon – Sat: 10:00 AM – 9:00 PM<br>Sunday: By Appointment Only</div></div></div>
+      <div class="ct-det"><div class="ct-ico">⭐</div><div><div class="ct-lbl">Our Rating</div><div class="ct-val">4.9 ★★★★★ — 58 Verified Google Reviews</div></div></div>
+    </div>
+    <div class="ct-map rv">
+      <iframe src="https://maps.google.com/maps?q=Anand+Puri+Ajmer+Rajasthan&output=embed" loading="lazy"></iframe>
+    </div>
+  </div>
+  <div>
+    <form class="ct-form rv" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="fg"><input class="fi" type="text" placeholder=" " id="n1"/><label class="fl" for="n1">Full Name</label></div>
+        <div class="fg"><input class="fi" type="tel" placeholder=" " id="p1"/><label class="fl" for="p1">Phone Number</label></div>
+      </div>
+      <div class="fg"><input class="fi" type="email" placeholder=" " id="e1"/><label class="fl" for="e1">Email Address</label></div>
+      <div class="fg"><input class="fi" type="text" placeholder=" " id="pt1"/><label class="fl" for="pt1">Project Type (Residential / Commercial)</label></div>
+      <div class="fg"><input class="fi" type="text" placeholder=" " id="loc1"/><label class="fl" for="loc1">Plot Location / Area in Ajmer</label></div>
+      <div class="fg"><input class="fi" type="text" placeholder=" " id="bdg1"/><label class="fl" for="bdg1">Approximate Budget (₹)</label></div>
+      <div class="fg"><textarea class="ft" placeholder=" " id="msg1"></textarea><label class="fl" for="msg1">Tell Us About Your Vision</label></div>
+      <button type="submit" class="fsub"><span>Send Enquiry →</span></button>
+    </form>
+  </div>
+</section>
+
+<!-- ======= SECTION 20: FOOTER ======= -->
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <div class="ft-logo">✦ TNC Architects<br><span style="font-weight:200;font-size:1.1rem">Design & Build</span></div>
+      <p class="ft-desc">Creating extraordinary architectural experiences in Ajmer and across Rajasthan. From elegant residences to inspiring commercial spaces — we build dreams that last.</p>
+      <div class="ft-rating"><div class="ft-stars">★★★★★</div><div class="ft-rtxt">4.9 · 58 Verified Google Reviews</div></div>
+    </div>
+    <div>
+      <div class="ft-col-t">Services</div>
+      <ul class="ft-links">
+        <li><a href="#">Architectural Design</a></li>
+        <li><a href="#">Interior Design</a></li>
+        <li><a href="#">3D Visualization</a></li>
+        <li><a href="#">Construction & Build</a></li>
+        <li><a href="#">Vastu Consultation</a></li>
+        <li><a href="#">Landscape Design</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-t">Company</div>
+      <ul class="ft-links">
+        <li><a href="#about">About TNC</a></li>
+        <li><a href="#portfolio">Our Projects</a></li>
+        <li><a href="#team">Meet the Team</a></li>
+        <li><a href="#awards">Awards</a></li>
+        <li><a href="#blog">Design Blog</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-col-t">Get In Touch</div>
+      <ul class="ft-links">
+        <li><a href="tel:07877991122">📞 078779 91122</a></li>
+        <li><a href="https://wa.me/917877991122">💬 WhatsApp Us</a></li>
+        <li><a href="#">📍 Anand Puri, Ajmer</a></li>
+        <li><a href="#">Rajasthan 305001</a></li>
+        <li style="margin-top:1rem"><a href="#contact" style="color:var(--gold)">→ Free Consultation</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <div class="ft-copy">© 2025 <strong>TNC Architects Design & Build</strong>. All rights reserved. Ajmer, Rajasthan, India.</div>
+    <div class="socials">
+      <a class="soc" href="#" title="Instagram">📸</a>
+      <a class="soc" href="#" title="Facebook">👤</a>
+      <a class="soc" href="#" title="YouTube">▶</a>
+      <a class="soc" href="https://wa.me/917877991122">💬</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Preloader
+window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('pre').classList.add('out')},2400)});
+
+// Cursor
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+function animCur(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(animCur)}
+animCur();
+document.querySelectorAll('a,button').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{curR.style.width='52px';curR.style.height='52px';curR.style.opacity='1'});
+  el.addEventListener('mouseleave',()=>{curR.style.width='32px';curR.style.height='32px';curR.style.opacity='.5'});
+});
+
+// Navbar + Floating
+const nav=document.getElementById('nav'),fb=document.getElementById('floatBtns');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scr',window.scrollY>60);
+  fb.classList.toggle('vis',window.scrollY>400);
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('on'),i*70);obs.unobserve(e.target)}});
+},{threshold:.1});
+document.querySelectorAll('.rv,.rl,.rr').forEach(el=>obs.observe(el));
+
+// Counter
+const cObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target,t=parseInt(el.dataset.count),s=el.dataset.suffix||'';
+      let c=0;const inc=t/60;
+      const tm=setInterval(()=>{c+=inc;if(c>=t){c=t;clearInterval(tm)}el.textContent=Math.floor(c)+s},28);
+      cObs.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>cObs.observe(el));
+
+// Testimonials
+let tsI=0;
+const tsT=document.getElementById('tsTrack'),tsCards=tsT.querySelectorAll('.ts-card');
+function updTs(){
+  const isMob=window.innerWidth<768;
+  const vis=isMob?1:2;
+  const max=tsCards.length-vis;
+  tsI=Math.max(0,Math.min(tsI,max));
+  const w=tsCards[0].offsetWidth+24;
+  tsT.style.transform=`translateX(-${tsI*w}px)`;
+}
+document.getElementById('tsNext').addEventListener('click',()=>{tsI++;updTs()});
+document.getElementById('tsPrev').addEventListener('click',()=>{tsI--;updTs()});
+window.addEventListener('resize',updTs);
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
+});
+
+// Portfolio filter
+document.querySelectorAll('.flt').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.flt').forEach(b=>b.classList.remove('on'));
+    btn.classList.add('on');
+  });
+});
+
+// Form submit
+function submitForm(e){
+  e.preventDefault();
+  const span=e.target.querySelector('.fsub span');
+  span.textContent='✓ Enquiry Sent! We will call you shortly.';
+  e.target.querySelector('.fsub').style.background='var(--gold-d)';
+  setTimeout(()=>{span.textContent='Send Enquiry →';e.target.querySelector('.fsub').style.background='var(--gold)';e.target.reset()},4000);
+}
+
+// Mobile menu stub
+function toggleMob(){const n=document.getElementById('nav').querySelector('.n-links');n.style.display=n.style.display==='flex'?'none':'flex'}
+</script>
+</body>
+</html>
